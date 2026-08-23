@@ -132,4 +132,4 @@ console.log(color);   //red
 let {model} = car2
 console.log(model)  //X3
 
-//
+/********** REST & SPREAD OPERATER ********* */
