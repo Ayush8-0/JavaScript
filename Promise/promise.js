@@ -91,4 +91,3 @@ p1.then((res) => {
     }) 
 
 .finally(() => console.log("Promise p2 Completed"))
-
