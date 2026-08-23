@@ -140,4 +140,4 @@ console.log(z);         //[ 3, 4, 5 ]
 
 let { year, ...others } = car2
 console.log(year)       //2020
-console.log(others)     
+console.log(others)     //
