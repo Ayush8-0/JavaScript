@@ -47,10 +47,3 @@ localStorage.setItem("isLoggedIn", true);
 localStorage.setItem("users", ['John', 'James', 'Jack']);
 
 console.log(localStorage.getItem("users"))
-
-
-
-
-
-
-
