@@ -49,3 +49,32 @@ rec.then((res) => res.json())
 .catch((err) => console.log(err))
 .finally(() => console.log("Promise Completed"))
 
+let prod = fetch("https://dummyjson.com/products")
+prod.then((res) => res.json())
+.then((res) => {
+    //console.log(res);
+    console.log("Product Limit: "+res.limit)
+    console.log("Products Skipped: "+res.skip)
+    console.log("product",res.products)
+
+    res.products.forEach((ele) => console.log(`${ele.title} Price: 💵${Math.round(ele.price * 95)}`));
+
+    let inStock = res.products.filter((ele) => ele.availabilityStatus === 'In Stock')
+    console.log(inStock);
+
+    let ratingGreaterThan3 = res.products.filter((ele) => ele.rating > 3)
+    console.log(ratingGreaterThan3)
+
+    res.products.forEach((ele) => {
+        console.log(ele.category)
+        document.write(`<h1> ${ele.title} </h1>`)
+        document.write(`<img src = "${ele.thumbnail}" alt = "${ele.title}"><br>`); 
+        document.write(` <b> 💵 Rs${Math.round(ele.price * 95)} </b>`)
+        document.write(`<p> ${ele.description.slice(0,50)}... </p>`) 
+    })
+    
+        let groceries = res.products.filter((ele) => ele.category === 'groceries');
+        console.log(groceries);
+})
+.catch((err) => console.log(err))
+.finally(() => console.log("Products Promise Completed"))
