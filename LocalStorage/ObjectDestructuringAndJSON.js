@@ -133,6 +133,7 @@ let {model} = car2
 console.log(model)  //X3
 
 /********** REST & SPREAD OPERATER ********* */
+//REST Operator (...others)
 let arr1 = [1,2,3,4,5];
 let [x,y, ...z] = arr1
 console.log(x,y);       //1 2
@@ -140,4 +141,73 @@ console.log(z);         //[ 3, 4, 5 ]
 
 let { year, ...others } = car2
 console.log(year)       //2020
-console.log(others)     //
+console.log(others)     //{ carName: 'BMW', price: 1000000, color: 'red', model: 'X3' }
+
+let mobile = {
+  mobileName: "iPhone",
+  mobilePrice: 100000,
+  mobilecolor: 'Blue',
+  mobileModel: '17 PRO MAX',
+  year: 2026,
+  ram: 32,
+  Storage: "1TB",
+  processor: "Apple A14"
+}
+
+let {mobileName, mobilePrice, ...more} = mobile; //{keyName}
+console.log(mobileName, mobilePrice);         //iPhone 100000
+console.log(more)
+// {
+//   mobilecolor: 'Blue',
+//   mobileModel: '17 PRO MAX',
+//   year: 2026,
+//   ram: 32,
+//   Storage: '1TB',
+//   processor: 'Apple A14'
+// }
+
+//SPREAD Operator (...arr2)
+let arr2 = [1,2,3,4,5,6];
+console.log(arr2)         //[ 1, 2, 3, 4, 5, 6 ]
+console.log(...arr2)      //1 2 3 4 5 6  (Spread Operator: Extracting all the elements at the same time)
+
+let arr3 = [...arr2];
+console.log(...arr2);      //[ 1, 2, 3, 4, 5, 6 ]
+
+//Shallow Copy
+let arr4 = [1,2,3,4,{username: 'Ayush'},5,6];
+let arr5 = [...arr4]
+console.log(arr5 === arr4);     //false
+console.log(arr4[4].username === arr4[4].username)  //true
+/*
+Shallow Copy examples: The array is not same but the data copyed is same
+*/
+
+let laptop1 = {
+  laptopName1: 'MacBook M5',
+  laptopPrice1: 200000
+}
+
+let laptop2 = {
+  laptopName1: 'MacBook M5 Pro',
+  laptopColor2: ['white', 'black']
+}
+
+let laptop3 = {...laptop1, ...laptop2};
+console.log(laptop3)
+// {
+//   laptopName1: 'MacBook M5 Pro',
+//   laptopPrice1: 200000,
+//   laptopColor2: [ 'white', 'black' ]
+// }
+
+//Shallow Copy Of the Object
+let laptop4 = {...laptop1, ...laptop2};
+laptop2.laptopColor2.push("red");
+laptop4.laptopColor2.push("Blue");
+console.log(laptop4)
+// {
+//   laptopName1: 'MacBook M5 Pro',
+//   laptopPrice1: 200000,
+//   laptopColor2: [ 'white', 'black', 'red', 'Blue' ]
+// }
