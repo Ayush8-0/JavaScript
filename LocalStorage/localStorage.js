@@ -133,3 +133,11 @@ let {model} = car2
 console.log(model)  //X3
 
 /********** REST & SPREAD OPERATER ********* */
+let arr1 = [1,2,3,4,5];
+let [x,y, ...z] = arr1
+console.log(x,y);       //1 2
+console.log(z);         //[ 3, 4, 5 ]
+
+let { year, ...others } = car2
+console.log(year)       //2020
+console.log(others)     
