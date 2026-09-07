@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #products-container {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding-block: 10px;
+        }
+        #products-card {
+            width: 300px;
+            height: 400px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #product-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            transition-duration: 1s;
+        }
+        #product-image:hover {
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <button onClick = "above500()"> Above 500</button>
+        <button onClick = "below500()"> Below 500</button>
+        <button onClick = "lowToHigh()"> Low to High</button>
+        <button onClick = "highToLow()"> High to Low</button>
+        <br><br>
+
+        <form action = "">
+            <label for = "search">Search</label>
+            <input type = "text" id = "search" placeholder = "Search products...">
+            <br><br>
+        </form>
+    </div>
+    <section id="products-container"></section>
+    
+    <script src = "./products.js"></script>
+</body>
+</html>
