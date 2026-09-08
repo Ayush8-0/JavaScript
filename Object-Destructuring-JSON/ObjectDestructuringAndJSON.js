@@ -172,7 +172,8 @@ console.log(arr2)         //[ 1, 2, 3, 4, 5, 6 ]
 console.log(...arr2)      //1 2 3 4 5 6  (Spread Operator: Extracting all the elements at the same time)
 
 let arr3 = [...arr2];
-console.log(...arr2);      //[ 1, 2, 3, 4, 5, 6 ]
+console.log(...arr2);      //[ 1, 
+// 2, 3, 4, 5, 6 ]
 
 //Shallow Copy
 let arr4 = [1,2,3,4,{username: 'Ayush'},5,6];
